@@ -29,12 +29,10 @@ int main (int argc, char* argv[]) {
   res = fgets(user_input, 250, stdin);
 
   if ( res == NULL ) {
-    //Komunikat o błędzie, bardzo niski nubie.
     return 0;
   }
 
 
-  //iteracja przez wypełnione elementy tablicy, zatrzymać się na pierwszej pustej kolumnie (duperele)
   for( i=0; i < 250; i++ ) {
 
     if ( user_input[i] == pattern[j] ) {
@@ -43,7 +41,6 @@ int main (int argc, char* argv[]) {
 
       if ( j == patternSize) {
         if ( fputs( user_input, stdout ) == EOF ) {
-          //TODO Dodać komunikat o błędzie. Niskopoziomowo nubie.
           return 0;  
         }
         
